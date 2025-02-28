@@ -9,7 +9,7 @@
           return;
         }
         const widgetElement = document.createElement("div");
-        widgetElement.innerHTML = `<p style="padding: 10px; background: #f0f0f0; border-radius: 5px;">Hello from MyWidget!</p>`;
+        widgetElement.innerHTML = `<p style="padding: 10px; background: #f0f0f0; border-radius: 5px;">Hello from MyWidget FROM MY WIDGET COMPONENT!</p>`;
         container.appendChild(widgetElement);
       }
     };

@@ -4,16 +4,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   define: {
-    "process.env": "{}", // Ensure `process` is not referenced
-    process: "{}",
+    "process.env": {}, // ✅ Fix "process is not defined" error
   },
-  build: {
-    target: "esnext",
-    rollupOptions: {
-      output: {
-        format: "iife",
-        entryFileNames: "widget.iife.js",
-      },
-    },
+  esbuild: {
+    minifyIdentifiers: false, // ✅ Prevents renaming issues (e.g., "ce.render")
   },
 });

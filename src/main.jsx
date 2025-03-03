@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import WidgetContent from "./components/WidgetContent";
+import React from "react";
+import { createRoot } from "react-dom"; // ✅ React 19 still uses createRoot
 
 window.MyWidget = {
   init: ({ containerId }) => {
@@ -10,9 +10,10 @@ window.MyWidget = {
       return;
     }
 
-    ReactDOM.render(<WidgetContent />, container); // ✅ This works for both React 17 & 18
+    createRoot(container).render(<WidgetContent />); // ✅ Correct for React 19
   },
 };
+
 
 
 // (function() {
